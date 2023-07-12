@@ -17,7 +17,7 @@ public class Main extends Application {
 			
 			BorderPane root = new BorderPane();
 			root.setPadding(new Insets(20, 20, 20, 20));
-			root.setStyle("-fx-background-color: cyan;");
+			root.setStyle("-fx-background-color: white;");
 			
 			Label lbl = new Label("Hello World");
 			root.setCenter(lbl);
