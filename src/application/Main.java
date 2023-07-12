@@ -1,5 +1,6 @@
 package application;
 	
+import application.scenes.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
@@ -11,18 +12,20 @@ import javafx.scene.layout.BorderPane;
 public class Main extends Application {
 	private static final String TITLE = "Journalicious";
 	
+	
+	private SceneController controller;
+	
+	
+	public Main() {
+		 this.controller = new SceneController();
+	}
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			
-			BorderPane root = new BorderPane();
-			root.setPadding(new Insets(20, 20, 20, 20));
-			root.setStyle("-fx-background-color: cyan;");
+			Scene scene = this.controller.getCurrentScene();
 			
-			Label lbl = new Label("Hello World");
-			root.setCenter(lbl);
-			
-			Scene scene = new Scene(root,400,400);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle(TITLE);
 			primaryStage.show();
